@@ -1,6 +1,9 @@
 ---
 - name: Nonkube smoke test as non root
   hosts: rootless
+  environment:
+    SKUPPER_ROUTER_IMAGE: "{{ router_image | default('') }}"
+    SKUPPER_CLI_IMAGE: "{{ cli_image | default('') }}"
   tasks:
     - name: Rootless smoke tests tasks
       block:
@@ -19,6 +22,9 @@
 
 - name: Nonkube smoke test as root
   hosts: rootful
+  environment:
+    SKUPPER_ROUTER_IMAGE: "{{ router_image | default('') }}"
+    SKUPPER_CLI_IMAGE: "{{ cli_image | default('') }}"
   tasks:
     - name: Rootful smoke tests tasks
       block:
