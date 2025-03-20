@@ -72,10 +72,10 @@ Through the CI a smaller matrix (using inventory):
 
 ## Overwriting SKUPPER_CLI and SKUPPER_ROUTER images
 
-The default images used by the smoke tests are based on the binaries available at the time of the release. If you want to use a different image, you can overwrite the `cli_image` and `router_image` variables when running the playbook.
+The default images used by the smoke tests are based on the binaries available at the time of the release. If you want to use a different image, you can overwrite the `run_cli_image` and `router_image` variables when running the playbook.
 
 ```yaml
--e cli_image=<YOUR_CLI_IMAGE> -e router_image=<YOUR_ROUTER_IMAGE>
+-e run_cli_image=<YOUR_CLI_IMAGE> -e router_image=<YOUR_ROUTER_IMAGE>
 ```
 
 ## Included content/ Directory Structure
