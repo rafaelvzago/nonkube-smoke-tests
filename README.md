@@ -69,6 +69,15 @@ Through the CI a smaller matrix (using inventory):
   * Your user must be able to log in as both root and non root user against all hosts
   * Rootful tests disabled in CI as we are unable to write to /usr and /etc
 
+
+## Overwriting SKUPPER_CLI and SKUPPER_ROUTER images
+
+The default images used by the smoke tests are based on the binaries available at the time of the release. If you want to use a different image, you can overwrite the `run_cli_image` and `router_image` variables when running the playbook.
+
+```yaml
+-e run_cli_image=<YOUR_CLI_IMAGE> -e router_image=<YOUR_ROUTER_IMAGE>
+```
+
 ## Included content/ Directory Structure
 
 ```
