@@ -3,7 +3,7 @@
   hosts: rootless
   environment:
     SKUPPER_ROUTER_IMAGE: "{{ router_image | default('') }}"
-    SKUPPER_CLI_IMAGE: "{{ cli_image | default('') }}"
+    SKUPPER_CLI_IMAGE: "{{ run_cli_image | default('') }}"
   tasks:
     - name: Rootless smoke tests tasks
       block:
@@ -24,7 +24,7 @@
   hosts: rootful
   environment:
     SKUPPER_ROUTER_IMAGE: "{{ router_image | default('') }}"
-    SKUPPER_CLI_IMAGE: "{{ cli_image | default('') }}"
+    SKUPPER_CLI_IMAGE: "{{ run_cli_image | default('') }}"
   tasks:
     - name: Rootful smoke tests tasks
       block:
