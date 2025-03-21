@@ -10,18 +10,3 @@
     dest: hello-world/
     mode: '0755'
 
-- name: Removing Skupper sites
-  ansible.builtin.command:
-    argv: "{{ cleanup_command + [ns] }}"
-    chdir: "hello-world"
-  environment:
-    SKUPPER_PLATFORM: "podman"
-  loop:
-    - "east"
-    - "west"
-  loop_control:
-    loop_var: ns
-  retries: 3
-  delay: 5
-  register: _remove
-  changed_when: not _remove.failed

@@ -1,6 +1,9 @@
 ---
 - name: Run rootful smoke tests
   hosts: rootful
+  environment:
+    SKUPPER_ROUTER_IMAGE: "{{ router_image | default('') }}"
+    SKUPPER_CLI_IMAGE: "{{ run_cli_image | default('') }}"
   tasks:
     - name: Run rootful smoke tests
       ansible.builtin.include_role:
